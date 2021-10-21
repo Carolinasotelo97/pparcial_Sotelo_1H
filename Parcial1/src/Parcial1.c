@@ -55,7 +55,7 @@ int main(void)
 		printf("Array de arcades inicializado correctamente\n");
 	}
 
-	forzarSalon(arraySalones,TAM_SAL,1,"Cady Crush","Cordoba 567",1,3,0);
+	forzarSalon(arraySalones,TAM_SAL,1,"Cady Crush","Cordoba 567",1,1,0);
 	forzarSalon(arraySalones,TAM_SAL,2,"Digitex","Mexico 200",2,2,0);
 	forzarSalon(arraySalones,TAM_SAL,3,"Palacio digital","Esmeralda 233",1,3,0);
 	forzarSalon(arraySalones,TAM_SAL,4,"Juegatron","Santa Fe 234",2,4,0);
@@ -66,8 +66,8 @@ int main(void)
 	forzarSalon(arraySalones,TAM_SAL,9,"Destruction","Cordoba 342",1,9,0);
 	forzarSalon(arraySalones,TAM_SAL,10,"Mad games","Mitre 344",2,10,0);
 
-	forzarArcade(arrayArcades,TAM_ARC, 0,"Argentina",1,2,100,0,"Pacman",0,0);
-	forzarArcade(arrayArcades,TAM_ARC, 1,"Argentina",1,2,100,0,"Street fighters",1,0);
+	forzarArcade(arrayArcades,TAM_ARC, 0,"Argentina",1,9,100,0,"Pacman",0,0);
+	forzarArcade(arrayArcades,TAM_ARC, 1,"Argentina",1,5,100,0,"Street fighters",1,0);
 	forzarArcade(arrayArcades,TAM_ARC, 2,"Brasil",2,1,200,1,"Galaga",2,0);
 	forzarArcade(arrayArcades,TAM_ARC, 3,"Chile",1,4,150,1,"Wonderboy",3,0);
 	forzarArcade(arrayArcades,TAM_ARC, 4,"Argentina",2,2,150,1,"Mario Bros",4,0);
@@ -76,10 +76,24 @@ int main(void)
 	forzarArcade(arrayArcades,TAM_ARC, 7,"Mexico",2,4,100,2,"Mario Bros",7,0);
 	forzarArcade(arrayArcades,TAM_ARC, 8,"Argentina",1,2,500,2,"Centipede",8,0);
 	forzarArcade(arrayArcades,TAM_ARC, 9,"Mexico",2,4,100,2,"Snowbros",9,0);
-	forzarArcade(arrayArcades,TAM_ARC, 10,"Argentina",1,2,500,2,"Sunset Riders",10,2);
-	forzarArcade(arrayArcades,TAM_ARC, 11,"Mexico",2,4,100,3,"Gi Joe",11,4);
-	forzarArcade(arrayArcades,TAM_ARC, 12,"Argentina",1,2,500,0,"Pacman",12,5);
-
+	forzarArcade(arrayArcades,TAM_ARC, 10,"Argentina",1,2,500,2,"Sunset Riders",10,0);
+	forzarArcade(arrayArcades,TAM_ARC, 11,"Mexico",2,4,100,3,"Gi Joe",11,0);
+	forzarArcade(arrayArcades,TAM_ARC, 12,"Argentina",1,2,500,3,"Pacman",12,0);
+	forzarArcade(arrayArcades,TAM_ARC, 13,"Chile",1,4,150,1,"Wonderboy",13,0);
+	forzarArcade(arrayArcades,TAM_ARC, 14,"Argentina",2,3,150,1,"Mario Bros",14,0);
+	forzarArcade(arrayArcades,TAM_ARC, 15,"Japon",1,5,100,1,"Pacman",15,0);
+	forzarArcade(arrayArcades,TAM_ARC, 16,"China",2,5,200,1,"Galaga",16,0);
+	forzarArcade(arrayArcades,TAM_ARC, 17,"Mexico",2,4,100,1,"Mario Bros",17,0);
+	forzarArcade(arrayArcades,TAM_ARC, 18,"Argentina",1,5,500,1,"Centipede",18,0);
+	forzarArcade(arrayArcades,TAM_ARC, 19,"Mexico",2,4,100,1,"Snowbros",19,0);
+	forzarArcade(arrayArcades,TAM_ARC, 20,"Argentina",1,5,500,1,"Sunset Riders",20,0);
+	forzarArcade(arrayArcades,TAM_ARC, 21,"Mexico",2,4,100,1,"Gi Joe",21,0);
+	forzarArcade(arrayArcades,TAM_ARC, 22,"Argentina",1,5,500,1,"Pacman",22,0);
+	forzarArcade(arrayArcades,TAM_ARC, 23,"Argentina",1,5,500,1,"Pacman",23,0);
+	forzarArcade(arrayArcades,TAM_ARC, 24,"Argentina",1,5,500,1,"Pacman",24,0);
+	forzarArcade(arrayArcades,TAM_ARC, 25,"Argentina",1,5,500,1,"Pacman",25,0);
+	forzarArcade(arrayArcades,TAM_ARC, 26,"Argentina",1,5,500,1,"Pacman",26,0);
+	forzarArcade(arrayArcades,TAM_ARC, 27,"Argentina",1,5,500,1,"Pacman",27,0);
 
 	do{
 		printf("1) Alta de salon\n");
@@ -242,6 +256,7 @@ int main(void)
 					break;
 				case 9:
 					do{
+
 						printf("**********SUBMENU DE INFORMES*******************\n");
 
 						printf("A) Salones con mas de 4 arcades\n");
@@ -255,7 +270,7 @@ int main(void)
 						printf("I) informar el promedio de arcades funcionando que hay en base a la cantidad de salones disponibles.\n");
 						printf("Z) Salir\n");
 
-						utn_getChar(&informeAMostrar,"\nSeleccione el informe que desea","\nInforme invalido",0, 2);
+						utn_getChar(&informeAMostrar,"\nSeleccione el informe que desea","\nInforme invalido",2, 2);
 
 						switch(informeAMostrar)
 						{
@@ -294,7 +309,7 @@ int main(void)
 								}
 								break;
 							case 'H':
-								if(informeSalonCompleto(arrayArcades,TAM_ARC,arraySalones,TAM_SAL)== 0)
+								if(informeSalonCompleto(arrayArcades,TAM_ARC,arraySalones,TAM_SAL) != 0)
 								{
 									printf("error al informar promedio, chekee que haya algun salon de alta y vuelva a intentarlo");
 								}
